@@ -1,11 +1,18 @@
 # -- coding: utf-8 --
 from elasticsearch import Elasticsearch
-from netwrok.Networkconnect import Netsocket
+from network.Networkconnect import Netsocket
 
 
 es = Elasticsearch([{'host': "172.29.42.98", 'port': 9200}, {'host': "172.29.45.22", 'port': 9200},{'host': "172.29.45.81", 'port': 9201}], timeout=3600)
 
 class  Essearch:
+
+    def Esindex(self,eshost):
+        netconnt=Netsocket.Networkconnect
+        self.url=eshost+"/_cat/indices"
+        index=netconnt.netconn().get(self.url)
+        return index
+
     def Escardno(self):
         body = {
         "query": {
