@@ -1,0 +1,27 @@
+from flask import Flask
+from flask import render_template
+
+
+app = Flask(__name__)
+
+
+@app.route('/hello')
+def hello_world():
+    return 'Hello World!'
+
+@app.route('/module')
+def module():
+
+    return render_template('index.html',u=search_result)
+
+@app.route('/index')
+def index():
+
+    return render_template('index.html',u=search_result)
+
+
+
+
+if __name__ == '__main__':
+    app.debug=True
+    app.run(host='0.0.0.0',port=5000)
