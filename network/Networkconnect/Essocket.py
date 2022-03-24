@@ -21,6 +21,6 @@ class  Essearch:
         "from": "0",
         "size": "50"
     }
-        search_result = es.search(index="preprod-2022.03.15", doc_type=None, body=body)
+        search_result = es.search(index="actuator", doc_type=None, body=body)
         search_result = search_result['hits']['total']['value']  # 符合条件数据条目总数
         return  search_result

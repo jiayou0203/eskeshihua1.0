@@ -18,7 +18,7 @@ def module():
 
 @app.route('/index')
 def index():
-    eslist={'172.29.42.98:9200','172.29.45.22:9200','172.29.45.81:9200'}
+    eslist={'216.117.186.41:9200'}
     for  eshost  in  eslist:
          search_index=Essocket.Essearch().Esindex(eshost)
     return render_template('index.html',u=search_index)
