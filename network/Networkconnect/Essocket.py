@@ -22,20 +22,23 @@ class  Essearch:
         index=[]
         index.append(index_zhi[2])
         i=2
-        while i<860:
+        while i<len(index_zhi):
               index.append(index_zhi[i])
               i+=10
               print(i)
         return index
 
     def Escardno(self):
+        index=Essearch.Esindex()
         body = {
-        "query": {
-            "match_all": {}
-        },
-        "from": "0",
-        "size": "50"
-    }
-        search_result = es.search(index="preprod-2022.03.15", doc_type=None, body=body)
+            "query": {
+                "term": {
+                    "message": "cardno"
+                }
+            },
+            "from": "0",
+            "size": "50"
+        }
+        search_result = es.search(index=index, doc_type=None, body=body)
         search_result = search_result['hits']['total']['value']  # 符合条件数据条目总数
         return  search_result
