@@ -12,32 +12,6 @@
     <th>状态</th>
 
   </tr>
-      <tr>
-         <td>{{ u }}</td>
-      </tr>
-  </table>
-
-</body>
-</html>
-
-(es-window) [root@ip-172-29-7-158 templates]# vim index.html
-(es-window) [root@ip-172-29-7-158 templates]# cat  index
-cat: index: No such file or directory
-(es-window) [root@ip-172-29-7-158 templates]# cat  index.html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Title</title>
-</head>
-<body>
-
-  <table class="table table-bordered">
-  <tr>
-    <th>索引名</th>
-    <th>状态</th>
-
-  </tr>
       {% for i in u %}
       <tr>
          <td>{{ i }}</td>
